@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>山域教育・互動簡報索引</title>
+<meta name="description" content="山域搜救與戶外教育互動教學簡報、實用計算工具總目錄。">
+<style>
+  :root{
+    --bg:#f4f6f5; --panel:#ffffff; --ink:#1a2420; --ink-2:#465049; --ink-3:#6b756e;
+    --line:#e2e7e4; --brand:#0f766e; --brand-2:#14b8a6; --gold:#b45309;
+    --shadow:0 1px 2px rgba(16,32,28,.05),0 8px 24px -12px rgba(16,32,28,.18);
+    --hero1:#0f766e; --hero2:#134e4a;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d1512; --panel:#152420; --ink:#eaf1ee; --ink-2:#aebbb5; --ink-3:#7f8d86;
+      --line:#22332d; --brand:#2dd4bf; --brand-2:#14b8a6; --gold:#f6c453;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -14px rgba(0,0,0,.6);
+      --hero1:#0b3b36; --hero2:#07231f;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+
+  /* Hero */
+  header.hero{
+    background:linear-gradient(135deg,var(--hero1),var(--hero2));
+    color:#eafffb;padding:56px 0 48px;position:relative;overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  header.hero::after{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 85% -10%,rgba(45,212,191,.35),transparent 55%),
+      radial-gradient(80% 70% at 5% 120%,rgba(20,184,166,.22),transparent 60%);
+    pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:#8ff0e0;font-weight:700;margin:0 0 10px}
+  h1{margin:0;font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:.01em;line-height:1.15}
+  .sub{margin:14px 0 0;font-size:clamp(15px,2.4vw,18px);color:#c8efe8;max-width:56ch}
+  .hero-meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);color:#eafffb;
+    padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600}
+
+  /* Sections */
+  main{padding:44px 0 60px}
+  section{margin-bottom:44px}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin:0 0 18px;
+    padding-bottom:10px;border-bottom:2px solid var(--line)}
+  .sec-head h2{margin:0;font-size:20px;font-weight:800;color:var(--ink)}
+  .sec-head .count{font-size:13px;color:var(--ink-3);font-weight:600}
+
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+  .card{display:flex;flex-direction:column;gap:10px;background:var(--panel);
+    border:1px solid var(--line);border-radius:16px;padding:20px;
+    box-shadow:var(--shadow);transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease;
+    position:relative;height:100%}
+  .card:hover{transform:translateY(-3px);border-color:var(--brand-2);
+    box-shadow:0 8px 20px -6px rgba(15,118,110,.28)}
+  .card .top{display:flex;align-items:flex-start;gap:12px}
+  .ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    font-size:22px;background:linear-gradient(135deg,rgba(20,184,166,.16),rgba(15,118,110,.10));
+    border:1px solid var(--line)}
+  .card h3{margin:0;font-size:16.5px;font-weight:800;color:var(--ink);line-height:1.35}
+  .card p{margin:0;font-size:13.5px;color:var(--ink-2);flex:1}
+  .foot{display:flex;align-items:center;justify-content:space-between;margin-top:4px}
+  .date{font-size:12px;color:var(--ink-3);font-weight:600}
+  .open{font-size:13px;font-weight:700;color:var(--brand);display:inline-flex;align-items:center;gap:4px}
+  .card:hover .open{color:var(--brand-2)}
+
+  .tools .grid{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+  .tool{display:flex;align-items:center;gap:12px;background:var(--panel);
+    border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    box-shadow:var(--shadow);transition:transform .16s ease,border-color .16s ease}
+  .tool:hover{transform:translateY(-2px);border-color:var(--brand-2)}
+  .tool .ico{width:38px;height:38px;font-size:19px;border-radius:10px}
+  .tool h3{margin:0;font-size:15px;font-weight:700;color:var(--ink)}
+  .tool .open{font-size:12px}
+
+  .misc a{color:var(--brand);font-weight:700}
+  .misc{font-size:14px;color:var(--ink-2)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--ink-3);font-size:13px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between}
+  footer a{color:var(--brand);font-weight:700}
+
+  @media (max-width:520px){
+    header.hero{padding:40px 0 34px}
+    .card{padding:17px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Mountain SAR &amp; Outdoor Education</p>
+    <h1>山域教育・互動簡報索引</h1>
+    <p class="sub">山域搜救與戶外技能的互動教學簡報與實用計算工具，全部集中在這一頁。點卡片即可開啟。</p>
+    <div class="hero-meta">
+      <span class="pill">🎓 7 份教學簡報</span>
+      <span class="pill">🧮 4 個實用工具</span>
+      <span class="pill">📱 支援手機／平板</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="sec-head"><h2>🎓 互動教學簡報</h2><span class="count">7 份</span></div>
+    <div class="grid">
+
+      <a class="card" href="https://phu00572.github.io/mountain-sar-training/">
+        <div class="top"><div class="ico">🧭</div>
+          <h3>山域搜索管理教育訓練</h3></div>
+        <p>以 SOIL 教學設計打造的搜救單位訓練簡報：搜索理論、覆蓋率與 POD、實務案例。</p>
+        <div class="foot"><span class="date">更新 2026-08-15</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/ranger-map-guide/">
+        <div class="top"><div class="ico">🗺️</div>
+          <h3>巡山員地圖 App 操作教學</h3></div>
+        <p>切換地圖／軌跡／標點／分享位置／尋找路線——手把手互動式操作教學。</p>
+        <div class="foot"><span class="date">更新 2026-09-15</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/lost-person-tracking/">
+        <div class="top"><div class="ico">👣</div>
+          <h3>迷途者搜索與追蹤</h3></div>
+        <p>山域搜救核心：迷途者行為、追蹤跡證判讀與搜索策略的互動教學。</p>
+        <div class="foot"><span class="date">更新 2026-08-28</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/wilderness-survival/">
+        <div class="top"><div class="ico">🔥</div>
+          <h3>野外求生原理與保暖原則</h3></div>
+        <p>失溫機制、四大熱量流失途徑與保暖策略，建立正確的野外求生觀念。</p>
+        <div class="foot"><span class="date">更新 2026-08-20</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/mountain-lightweight-gear/">
+        <div class="top"><div class="ico">🎒</div>
+          <h3>山域輕量化模組裝</h3></div>
+        <p>個人輕量化裝備的模組化思維：三大系統取捨與重量管理（Reveal.js + Firebase）。</p>
+        <div class="foot"><span class="date">更新 2026-08-20</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/tarp-shelter-guide/">
+        <div class="top"><div class="ico">⛺</div>
+          <h3>外帳（天幕）搭設教學</h3></div>
+        <p>包覆式／A 字／斜邊／L 型四種搭法，逐步圖解的互動式教學。</p>
+        <div class="foot"><span class="date">更新 2026-08-17</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+      <a class="card" href="https://phu00572.github.io/interactive-classroom-toolbox/">
+        <div class="top"><div class="ico">🧰</div>
+          <h3>互動課堂工具箱</h3></div>
+        <p>6 種 HTML 即時互動範例（文字雲／投票／提問牆…），課堂互動一次備齊。</p>
+        <div class="foot"><span class="date">更新 2026-08-15</span><span class="open">開啟 ↗</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="tools">
+    <div class="sec-head"><h2>🧮 實用工具・計算器</h2><span class="count">4 個</span></div>
+    <div class="grid">
+      <a class="tool" href="https://phu00572.github.io/mountain-time-calculator/">
+        <div class="ico">⏱️</div>
+        <div><h3>山行時間計算</h3><span class="open">開啟 ↗</span></div>
+      </a>
+      <a class="tool" href="https://phu00572.github.io/Pulley-tension/">
+        <div class="ico">⚙️</div>
+        <div><h3>滑輪張力</h3><span class="open">開啟 ↗</span></div>
+      </a>
+      <a class="tool" href="https://phu00572.github.io/Knot-friction/">
+        <div class="ico">🪢</div>
+        <div><h3>繩結摩擦</h3><span class="open">開啟 ↗</span></div>
+      </a>
+      <a class="tool" href="https://phu00572.github.io/MoRE-time/">
+        <div class="ico">⏲️</div>
+        <div><h3>MoRE 時間</h3><span class="open">開啟 ↗</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="misc">
+    <div class="sec-head"><h2>🔗 其他專案</h2></div>
+    <p>gpt-ai-assistant — OpenAI + LINE 的 GPT 機器人專案：
+      <a href="https://github.com/phu00572/gpt-ai-assistant">GitHub 原始碼 ↗</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>最後更新 2026-09-18</span>
+    <span>GitHub：<a href="https://github.com/phu00572">@phu00572</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
